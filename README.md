@@ -5,4 +5,8 @@
 * python 3.8.5
 * openCV 4.6.0
 
+## install openCV
+```shell
+pip install opencv-contrib-python
+```
 
