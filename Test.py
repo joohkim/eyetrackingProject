@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+import dlib
 
 cap = cv2.VideoCapture(0)
 detector = dlib.get_frontal_face_detector()
@@ -10,7 +11,10 @@ while True:
 
     faces = detector(gray)
     for face in faces:
-        print(face)
+        x, y = face.left(), face.top()
+        x1, y1 = face.right(), face.bottom()
+        cv2.rectangle(frame, (x, y), (x1, y1), (0, 255, 0), 2)
+        #print(face)
 
     cv2.imshow("Frame", frame)
 
